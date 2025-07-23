@@ -1,0 +1,295 @@
+/* App.css */
+body {
+  background-color: transparent;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.draft-ui {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 30px;
+  background-color: transparent;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  padding: 0;       
+  background: none; 
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.coach {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.bans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
+  height: 60px; 
+  min-width: 220px;
+  align-items: center;
+}
+
+.picks {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center; 
+  flex-wrap: nowrap;
+}
+
+
+.pick-slot {
+  position: relative;
+  width: 120px;
+  height: 140px;
+  background-color: #222;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+
+.champ-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 160px;
+  object-fit: cover;
+  border: none;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+
+.player-name {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  width: 70px;
+  margin: 0 auto 10px auto;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 70px;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo {
+  background: #111;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #444;
+}
+
+.vs {
+  color: #aaa;
+  font-size: 20px;
+}
+
+.patch {
+  font-size: 14px;
+  color: #888;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+.ban-img-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.ban-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  object-fit: cover;
+  display: block;
+}
+
+.ban-img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 48px;
+  height: 55px;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    transparent 47%,
+    rgba(255, 255, 255, 0.7) 30%,
+    rgba(255, 255, 255, 0.7) 45%,
+    transparent 53%
+  );
+  border-radius: 5px;
+}
+
+.role-icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  margin-bottom: 2px;
+  filter: brightness(0) invert(1); /* makes the image white */
+}
+
+@media screen and (max-width: 768px) {
+  .draft-ui {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .team {
+    width: 100% !important;
+    margin: 10px 0;
+  }
+
+  .pick-slot {
+    width: 60px;
+    height: 90px;
+  }
+
+  .champ-img {
+    width: 70px;
+    height: 90px;
+  }
+
+  .player-name {
+    font-size: 12px;
+  }
+
+  .role-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ban-img-wrapper {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+  }
+
+  .ban-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logos {
+    font-size: 18px;
+  }
+
+  .logo {
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+
+  .vs {
+    font-size: 14px;
+  }
+
+  .patch {
+    font-size: 11px;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.champ-img.slide-down {
+  animation: slideDown 2s ease forwards;
+}
+
+.ban-img.slide-down , .ban-img-wrapper::after {
+  animation: slideDown2 2s ease forwards;
+}
+
+.draft-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  background-color: #646161;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  pointer-events: none;
+  border-left: 6px solid #3fa6ff;
+  border-right: 6px solid #ff4b4b;
+}
+
+.timer-bar-inside {
+  width: 100%;
+  height: 6px;
+  background-color: #111;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 1s linear;
+}
