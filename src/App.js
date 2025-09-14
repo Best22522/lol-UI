@@ -7,7 +7,7 @@ import "./App.css";
 
 const getChampImg = (champion) =>
   champion
-    ? `https://ddragon.leagueoflegends.com/cdn/15.14.1/img/champion/${champion}.png`
+    ? `https://ddragon.leagueoflegends.com/cdn/15.18.1/img/champion/${champion}.png`
     : "https://via.placeholder.com/64x64?text=?";
 
 const getRoleIcon = (index) => {
